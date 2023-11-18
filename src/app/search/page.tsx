@@ -1,7 +1,8 @@
 "use client";
+import SearchResCar from "./components/SearchResCar";
+import SearchSidebar from "./components/SearchSidebar";
+
 import { useState } from "react";
-import Header from "./components/Header";
-import RestaurantCard from "./components/RestaurantCard";
 
 export interface Product {
   productName: string;
@@ -33,18 +34,19 @@ export default function Home() {
     <main className="bg-gray-100 min-h-screen w-screen">
       <main className="max-w-screen-2xl m-auto bg-white">
         {/* NAVBAR */}
-        {/* <Navbar/> */}
-        {/* NAVBAR */}
-        <main>
-          {/* HEADER */}
-          <Header />
-          {/* HEADER */}
-          {/* CARDS */}
-          <div className="py-3 px-36 mt-10 flex flex-wrap justify-center">
-            <RestaurantCard products={product} />
+        {/* <SearchNavbar /> */}
+        {/* HEADER */}
+        {/* <SearchHeader/> */}
+        <div className="flex py-4 m-auto w-2/3 justify-between items-start">
+          {/* SEARCH SIDE BAR */}
+          <SearchSidebar />
+          {/* SEARCH SIDE BAR */}
+          <div className="w-5/6">
+            {/* RESAURANT CAR */}
+            <SearchResCar products={product} />
+            {/* RESAURANT CAR */}
           </div>
-          {/* CARDS */}
-        </main>
+        </div>
       </main>
     </main>
   );
